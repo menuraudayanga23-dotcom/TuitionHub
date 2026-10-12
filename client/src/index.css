@@ -6,10 +6,40 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: Arial, sans-serif;
-  background: #eef3fa;
+  background: #f1f5fb;
   color: #17243b;
 }
 
-button {
+button,
+input {
   font: inherit;
+}
+
+button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #294fb3;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #214196;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #294fb3;
+  outline-offset: 3px;
+}
+
+p {
+  line-height: 1.7;
 }

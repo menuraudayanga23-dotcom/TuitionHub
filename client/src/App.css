@@ -1,63 +1,176 @@
-.connection-card {
-  width: min(680px, calc(100% - 32px));
-  margin: 64px auto;
-  padding: 36px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 12px 40px #17243b12;
+.login-page {
+  min-height: 100vh;
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 800;
+  color: #294fb3;
 }
 
 .eyebrow {
+  margin-top: 32px;
   color: #3456a6;
   font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-h1 {
-  margin: 16px 0;
-  font-size: clamp(32px, 7vw, 44px);
+.intro-panel h1 {
+  max-width: 480px;
+  margin: 18px 0;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.15;
 }
 
-p {
-  line-height: 1.6;
+.intro-text,
+.muted,
+.help-text,
+.account-email {
+  color: #53627a;
 }
 
-.status-box {
+.feature-list {
+  padding-left: 22px;
+  line-height: 2;
+  color: #34445f;
+}
+
+.login-card,
+.welcome-card {
+  padding: 36px;
+  background: white;
+  border: 1px solid #e0e7f2;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px #17243b0a;
+}
+
+.login-card > .eyebrow {
+  margin-top: 0;
+}
+
+.login-card h2 {
+  font-size: 28px;
+  margin: 12px 0;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e4;
+  border-radius: 10px;
+  background: #fbfcff;
+  color: #17243b;
+  margin-bottom: 10px;
+}
+
+.help-text {
+  margin-top: 24px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.error-message {
+  padding: 12px;
+  background: #fff1ee;
+  color: #8a291b;
+  border: 1px solid #e9b7ad;
+  border-radius: 8px;
+}
+
+.dashboard {
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 0;
+}
+
+.dashboard-header p {
+  margin: 6px 0 0;
+  color: #53627a;
+}
+
+.secondary-button {
+  background: white;
+  color: #294fb3;
+  border: 1px solid #cbd5e4;
+}
+
+.secondary-button:hover {
+  background: #e8eefb;
+}
+
+.welcome-card h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  overflow-wrap: anywhere;
+}
+
+.account-email {
+  overflow-wrap: anywhere;
+}
+
+.welcome-card .eyebrow {
+  margin-top: 0;
+}
+
+.empty-state {
   margin-top: 28px;
   padding: 24px;
   background: #f3f6fc;
-  border: 1px solid #dce4f1;
   border-radius: 12px;
 }
 
-h2 {
+.empty-state h2 {
   margin-top: 0;
   font-size: 20px;
 }
 
-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #294fb3;
-  color: white;
-  cursor: pointer;
+.loading-screen {
+  padding: 64px 24px;
+  text-align: center;
 }
 
-button:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
+@media (max-width: 760px) {
+  .login-page {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 0;
+  }
 
-button:focus-visible {
-  outline: 3px solid #17243b;
-  outline-offset: 3px;
-}
+  .feature-list {
+    display: none;
+  }
 
-@media (max-width: 480px) {
-  .connection-card {
-    margin: 24px auto;
+  .login-card,
+  .welcome-card {
     padding: 24px;
+  }
+
+  .dashboard-header {
+    flex-wrap: wrap;
   }
 }
